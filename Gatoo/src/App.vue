@@ -1,7 +1,7 @@
 <template>
-	<body class="bg-dark_navy" >
-		
-	
+	<body class="bg-black">
+    
+	</body>	
 	<h1 className="text-3xl font-bold underline">
 		
 	</h1>
@@ -9,7 +9,7 @@
 
 	</pagina_pricipal>
 
-	</body>
+
 </template>
 
 <script setup>
