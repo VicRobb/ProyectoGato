@@ -1,12 +1,10 @@
 <template>
 
-   <div class="bg-dark_navy">
-
-   </div>
-    <section class="text-center text-light_blue">
+    
+    <section class="text-center ">
         hola
     </section>
-
+    <img src="../../../assets/logo.svg" alt="no">
 
 </template>
 
