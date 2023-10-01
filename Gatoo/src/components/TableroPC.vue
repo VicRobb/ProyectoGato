@@ -25,8 +25,9 @@
     </section>
     <div v-if="ganador" >
         <div class="fixed top-1/2 left-0 transform -translate-y-1/2  px-8 py-5 text-black text-center text-xl w-full max-w-full mx-auto h-52 bg-gradient-to-b from-g1 to-g2" >
-          <h2 v-if="ganador !== 'Empate'" class="text-light_blue font-bold text-5xl">{{ ganador }} Takes the round</h2>
-          <h2 v-else>¡Es un empate!</h2>
+          <h2 v-if="ganador == 'X'" class="text-light_blue font-bold text-5xl">X Takes the round</h2>
+          <h2 v-if="ganador == 'O'" class="text-light_yellow font-bold text-5xl">O Takes the round</h2>
+          <h2 v-if ="ganador == 'Empate'" class="text-silver font-bold text-5xl">Round tied</h2>
           <button @click="Quiet" class="mt-6 mr-4 bg-silver text-black font-medium py-2 px-4 rounded-2xl hover:bg-light_blue_hover transition duration-300">Quiet</button>
           <button @click="NextRound" class="mt-6 ml-4 bg-light_yellow text-black font-medium py-2 px-4 rounded-2xl text-black hover:bg-light_yellow_hover transition duration-300">Next Round</button>
         </div>
@@ -144,7 +145,3 @@ const jugadorPresionaBoton = (index) => {
   Empates = 0;
   };
   </script>
-  
-
- 
-  

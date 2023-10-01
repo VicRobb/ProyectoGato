@@ -1,9 +1,9 @@
-<template>
+<template class="pt-6">
   <section class="flex gap-20 flex justify-center items-center">
     <div>
       <img class="ml-0 pl-0" src="../assets/logo.svg" alt="no">
     </div>
-    <div class="p-5 m-3">
+    <div class="p-5 m-3 text-silver font-bold text-xl">
       Turno {{ turnoJugador }}
     </div>
     <div>
@@ -25,8 +25,9 @@
   </section>
   <div v-if="ganador" >
       <div class="fixed top-1/2 left-0 transform -translate-y-1/2  px-8 py-5 text-black text-center text-xl w-full max-w-full mx-auto h-52 bg-gradient-to-b from-g1 to-g2" >
-        <h2 v-if="ganador !== 'Empate'" class="text-light_blue font-bold text-5xl">{{ ganador }} Takes the round</h2>
-        <h2 v-else>¡Es un empate!</h2>
+          <h2 v-if="ganador == 'X'" class="text-light_blue font-bold text-5xl">X Takes the round</h2>
+          <h2 v-if="ganador == 'O'" class="text-light_yellow font-bold text-5xl">O Takes the round</h2>
+          <h2 v-if ="ganador == 'Empate'" class="text-silver font-bold text-5xl">Round tied</h2>
         <button @click="Quiet" class="mt-6 mr-4 bg-silver text-black font-medium py-2 px-4 rounded-2xl hover:bg-light_blue_hover transition duration-300">Quiet</button>
         <button @click="NextRound" class="mt-6 ml-4 bg-light_yellow text-black font-medium py-2 px-4 rounded-2xl text-black hover:bg-light_yellow_hover transition duration-300">Next Round</button>
       </div>
@@ -42,6 +43,8 @@ const botones = ref([0, 0, 0, 0, 0, 0, 0, 0, 0]);
 const turnoJugador = ref("X");
 import iconX from '../assets/icon-x.svg';
 import iconO from '../assets/icon-o.svg';
+import iconXGa from '../assets/icon-x-outline.svg';
+import iconOGa from '../assets/icon-o-outline.svg';
 const ganador = ref(null);
 let VictoriasUsuario = 0;
 let VictoriasCPU = 0;
@@ -66,7 +69,7 @@ const Presionabtn = (index) => {
       const [a, b, c] = combinacion;
       if (botones.value[a] && botones.value[a] === botones.value[b] && botones.value[a] === botones.value[c]) {
         ganador.value = turnoJugador.value;
-        
+        console.log(combinacion);
         console.log("¡Jugador" + ganador.value +  "es el ganador!");
         if(ganador.value == "O"){
           VictoriasCPU++;
