@@ -1,6 +1,4 @@
 <template>
-	
-
 	<pagina_pricipal  v-if="showPage"></pagina_pricipal>
 	
 	<router-view v-if="!showPage"/>
