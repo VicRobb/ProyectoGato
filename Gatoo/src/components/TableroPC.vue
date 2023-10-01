@@ -1,9 +1,13 @@
 <template>
+<<<<<<< HEAD
     
     <div class="m-20"></div>
     <section class=" gap-20 flex justify-center items-center">
+=======
+    <section class="flex gap-20 flex justify-center items-center">
+>>>>>>> gato/master
       <div>
-        <img class="p-3 m-3" src="../assets/logo.svg" alt="no">
+        <img class=" ml-0 pl-0" src="../assets/logo.svg" alt="no">
       </div>
       <div class="p-5 m-3">
         Turno {{ turnoJugador }}
@@ -13,11 +17,16 @@
       </div>
     </section>
     <div class="mx-auto my-auto w-1/3 grid grid-cols-3 grid-rows-3 gap-1">
-      <button @click="jugadorPresionaBoton(index)" v-for="(boton, index) in botones" :key="index" class="rounded-2xl p-6 m-2 bg-semi_dark_navy">
-        <img v-if="boton === 1" :src="iconX" alt="X" />
+      <button @click="jugadorPresionaBoton(index)" v-for="(boton, index) in botones" :key="index" class=" w-32 h-32 rounded-2xl p-6 m-2 bg-semi_dark_navy flex justify-center items-center">
+        <img  v-if="boton === 1" :src="iconX" alt="X" />
         <img v-if="boton === 2" :src="iconO" alt="O" />
       </button>
     </div>
+    <section class="mx-auto my-auto w-1/3 grid grid-cols-3  gap-1">
+      <button class=" w-32 h-20 rounded-2xl p-6 m-2 bg-light_blue flex justify-center items-center font-semibold">You: {{ VictoriasUsuario }}</button>
+      <button class=" w-32 h-20 rounded-2xl p-6 m-2 bg-silver flex justify-center items-center font-semibold">Ties: {{ Empates }}</button>
+      <button class=" w-32 h-20 rounded-2xl p-6 m-2 bg-light_yellow flex justify-center items-center font-semibold">CPU: {{ VictoriasCPU   }}</button>
+    </section>
   </template>
   
   <script setup>
@@ -28,7 +37,9 @@
   import iconX from '../assets/icon-x.svg';
   import iconO from '../assets/icon-o.svg';
   const ganador = ref(null);
-  
+  let VictoriasUsuario = 0;
+  let VictoriasCPU = 0;
+  let Empates = 0;
   const jugadorPresionaBoton = (index) => {
     if (botones.value[index] === 0 && !ganador.value) {
       botones.value[index] = 1; 
@@ -96,7 +107,13 @@
       const [a, b, c] = combinacion;
       if (botones.value[a] && botones.value[a] === botones.value[b] && botones.value[a] === botones.value[c]) {
         ganador.value = turnoJugador.value;
+        
         console.log("¡Jugador" + ganador.value +  "es el ganador!");
+        if(ganador.value == "O"){
+          VictoriasCPU++;
+        }else if(ganador.value == "X"){
+          VictoriasUsuario ++;
+        }
         return;
       }
     }
@@ -104,6 +121,7 @@
     if (botones.value.every(boton => boton !== 0) && !ganador.value) {
       ganador.value = "Empate";
       console.log("Empate");
+      Empates ++;
     }
   }
   </script>
