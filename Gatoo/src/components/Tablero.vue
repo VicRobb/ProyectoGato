@@ -1,5 +1,5 @@
 <template>
-  <section class="flex gap-20 flex justify-center items-center">
+  <section class=" gap-20 flex justify-center items-center">
     <div>
       <img class="ml-0 pl-0" src="../assets/logo.svg" alt="no">
     </div>

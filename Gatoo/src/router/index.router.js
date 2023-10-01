@@ -6,12 +6,12 @@ const router = createRouter({
     routes: [
 				{
 				  path: "/:catchAll(.*)",
-				  redirect: { name: "Home" },
+				  redirect: { name: "home" },
         },
         
         {
             path: '/prin',
-            name: '/pp',
+            name: 'home',
             component: () => import('../pagina_principal/pagina_principal.vue'),
         },
           
