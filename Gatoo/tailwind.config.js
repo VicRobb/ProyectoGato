@@ -11,15 +11,18 @@ export default {
     colors:{
       
         'light_blue' : "#31C3BD",
-        'light_blue_hover' : "#65E99E4",
+        'light_blue_hover' : "#65E9E4",
         'light_yellow' : "#F2B137",
         'light_yellow_hover': "#FFC860",
         'silver' : "#A8BFC9",
         'silver_hover':"#DBE8ED",
         'dark_navy':"#1A2A33",
         'semi_dark_navy':"#1F3641",
+        'g1': "#293845",
+        'g2': "#1B262F",
       
       'white':"#FAFBF4"
+   
     },
     extend: {},
   },
