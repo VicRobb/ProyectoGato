@@ -1,6 +1,7 @@
 <template>
+  
     <div class="m-20"></div>
-    <section class="flex gap-20 flex justify-center items-center">
+    <section class=" gap-20 flex justify-center items-center">
       <div>
         <img class="p-3 m-3" src="../assets/logo.svg" alt="no">
       </div>

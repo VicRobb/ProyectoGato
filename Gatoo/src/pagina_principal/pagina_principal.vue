@@ -1,8 +1,8 @@
 
 <template>
 
-    
-    <section class="flex flex-col items-center ">
+
+    <section  class="flex flex-col items-center ">
         <div class="">
             <img src="../assets/logo.svg" alt="no" width="100" height="100">
         </div>
@@ -22,18 +22,27 @@
         </div>
 
         <div class="p-6">
-        <button class="rounded-2xl p-4 bg-light_yellow text-dark_navy"> NEW GAME (VS CPU) </button>
+            <router-link  to="/tabPC"  class=" rounded-2xl p-4 bg-light_yellow text-dark_navy"> NEW GAME (VS CPU) </router-link>
         </div>
-        <div>
-
-  <button  class="rounded-2xl p-4 bg-light_blue text-dark_navy">NEW GAME (VS PLAYER)</button>
-
-
+        <div class="m-4">
+            <RouterLink  to="/tab" class=" rounded-2xl p-4 bg-light_blue text-dark_navy">NEW GAME (VS PLAYER)</RouterLink>
         </div>
     
 
     </section>
 
+   
+    
+
+
 </template>
 <script setup>
+
+    import {toRef,ref} from 'vue'
+    import tab from '../components/Tablero.vue'
+    import tabPC from '../components/TableroPC.vue'
+
+    const value=ref(true)
+
+
 </script>

@@ -1,18 +1,36 @@
 <template>
-	<body class="bg-black">
 	
+
+	<pagina_pricipal  v-if="showPage"></pagina_pricipal>
 	
-	<pagina_pricipal></pagina_pricipal>
-	<TableroPC></TableroPC>
+	<router-view v-if="!showPage"/>
+
+	<router-link to="/prin" class="mt-5 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-light_yellow ">Menu</router-link>	
 	
-	</body>
 </template>
 
 <script setup>
 
 	import pagina_pricipal from './pagina_principal/pagina_principal.vue'
-	import Tablero from './components/Tablero.vue'
-	import TableroPC from './components/TableroPC.vue'
+	
+
+	import { toRef, ref } from 'vue';
+  import { useRouter } from 'vue-router';
+  const router = useRouter();
+  const showPage = ref(true);
+
+
+  // Escucha los cambios de ruta y oculta la página principal al redireccionar
+  router.afterEach(() => {
+    showPage.value = false;
+  });
+
+  const menu = () => {
+    showPage.value = true;
+  };
+ 
+	
+
 
 
 </script>
