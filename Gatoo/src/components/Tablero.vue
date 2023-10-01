@@ -8,7 +8,7 @@
         Turno {{ turnoJugador }}
       </div>
       <div>
-    <button class="rounded-2xl p-3 m-3 bg-silver"> <img src="../assets/icon-restart.svg" alt="no"> </button>
+        <button class="rounded-2xl p-3 m-3 bg-silver"> <img src="../assets/icon-restart.svg" alt="no"> </button>
       </div>
     </section>
   
@@ -24,6 +24,7 @@
   import { ref } from 'vue';
   import iconX from '../assets/icon-x.svg';
   import iconO from '../assets/icon-o.svg';
+  
   
   const botones = ref([0, 0, 0, 0, 0, 0, 0, 0, 0]); // Inicializar botones en estado "0"
   const turnoJugador = ref("X");

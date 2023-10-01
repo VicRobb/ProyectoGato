@@ -5,7 +5,7 @@ import Tablero from './components/Tablero.vue'; // Importa tus componentes
 const routes = [
   // Otras rutas si las tienes
   {
-    path: '/components/Tablero',
+    path: '/tablero',
     component: Tablero,
   },
 ];

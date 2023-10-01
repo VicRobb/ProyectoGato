@@ -3,7 +3,7 @@
 	
 	
 	<pagina_pricipal></pagina_pricipal>
-	<Tablero></Tablero>
+	<TableroPC></TableroPC>
 	
 	</body>
 </template>
@@ -12,6 +12,7 @@
 
 	import pagina_pricipal from './pagina_principal/pagina_principal.vue'
 	import Tablero from './components/Tablero.vue'
+	import TableroPC from './components/TableroPC.vue'
 
 
 </script>

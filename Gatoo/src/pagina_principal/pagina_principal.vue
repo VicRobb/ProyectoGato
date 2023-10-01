@@ -25,21 +25,15 @@
         <button class="rounded-2xl p-4 bg-light_yellow text-dark_navy"> NEW GAME (VS CPU) </button>
         </div>
         <div>
-            <router-link to="/tablero" class="router-link">
-  <button @click="() => redirectToTablero()"  class="rounded-2xl p-4 bg-light_blue text-dark_navy">NEW GAME (VS PLAYER)</button>
-</router-link>
+
+  <button  class="rounded-2xl p-4 bg-light_blue text-dark_navy">NEW GAME (VS PLAYER)</button>
+
 
         </div>
     
 
     </section>
 
-   
-
 </template>
-
-
 <script setup>
-
-
 </script>
