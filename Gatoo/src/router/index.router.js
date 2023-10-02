@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -11,7 +10,7 @@ const router = createRouter({
         
         {
             path: '/prin',
-            name: 'home',
+            name: '/pp',
             component: () => import('../pagina_principal/pagina_principal.vue'),
         },
           
