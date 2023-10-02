@@ -17,10 +17,10 @@
                 </div>
             </div>
             <div class=" py-8">
-                <router-link to="/tabPC" class="rounded-2xl p-4 bg-light_yellow text-black font-bold w-"> NEW GAME (VS CPU)   </router-link>
+                <router-link to="/tabPC" class="rounded-2xl p-4 bg-light_yellow hover:bg-light_yellow_hover text-black font-bold w-"> NEW GAME (VS CPU)   </router-link>
             </div>
             <div class=" py-8">
-                <router-link to="/tab" class="rounded-2xl p-4 bg-light_blue text-black font-bold w-80"> NEW GAME (VS PLAYER) </router-link>
+                <router-link to="/tab" class="rounded-2xl p-4 bg-light_blue hover:bg-light_blue_hover text-black font-bold w-80"> NEW GAME (VS PLAYER) </router-link>
             </div>
         </section>
     </div>
