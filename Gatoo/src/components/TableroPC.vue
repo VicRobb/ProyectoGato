@@ -3,7 +3,7 @@
       <div>
         <img class="ml-0 pl-0" src="../assets/logo.svg" alt="no">
       </div>
-      <div class="p-5 m-3">
+      <div  class="p-5 m-3 text-silver font-bold text-xl">
         Turno {{ turnoJugador }}
       </div>
       <div>

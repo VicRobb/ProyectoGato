@@ -1,16 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
 				{
 				  path: "/:catchAll(.*)",
-				  redirect: { name: "home" },
+				  redirect: { name: "Home" },
         },
         
         {
-            path: 'prin',
-            name: '/home',
+            path: '/prin',
+            name: '/pp',
             component: () => import('../pagina_principal/pagina_principal.vue'),
         },
           
