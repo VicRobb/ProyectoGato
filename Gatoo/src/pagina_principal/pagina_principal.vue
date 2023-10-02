@@ -1,19 +1,19 @@
 <template>
     <div class="flex justify-center items-center h-screen">
-        <section class="flex flex-col items-center py-18">
+        <section class="flex flex-col items-center py-18 ">
             <div>
                 <img class="py-8" src="../assets/logo.svg" alt="no" width="100" height="100">
             </div>
-            <div class="rounded-2xl w-100% text-silver p-3 bg-semi_dark_navy py-8 ">
-                <div class="p-5 text-center font-semibold text-silver">
-                    PICK PLAYER 1'S MARK
+            <div class="rounded-2xl w-80 text-silver p-3 bg-semi_dark_navy py-8 ">
+                <div class="p-5 text-center font-bold text-silver text-2xl">
+                    Gato
                 </div>
                 <div class="bg-dark_navy"> 
-                    <img src="../assets/icon-x-outline.svg" alt="">
-                    <img src="" alt="">
+                    <img src="../assets/gato.png" alt="">
+                  
                 </div>
                 <div class="p-5 text-center font-semibold text">
-                    REMEMBER: X GOES FIRST
+                    Disfuta el juego
                 </div>
             </div>
             <div class=" py-8">

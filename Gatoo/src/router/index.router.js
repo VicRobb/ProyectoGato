@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-
 const router = createRouter({
     history: createWebHistory(),
     routes: [
 				{
 				  path: "/:catchAll(.*)",
-				  redirect: { name: "Home" },
+				  redirect: { name: "home" },
         },
         
         {
@@ -31,4 +30,3 @@ const router = createRouter({
 })
 
 export default router
-

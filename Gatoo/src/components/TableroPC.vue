@@ -1,39 +1,59 @@
 <template>
-    <section class="flex gap-20 flex justify-center items-center">
-      <div>
-        <img class="ml-0 pl-0" src="../assets/logo.svg" alt="no">
-      </div>
-      <div  class="p-5 m-3 text-silver font-bold text-xl">
-        Turno {{ turnoJugador }}
-      </div>
-      <div>
-        <button class="rounded-2xl p-3 m-3 bg-silver"> <img src="../assets/icon-restart.svg" alt="no"> </button>
-      </div>
-    </section>
-  
-    <div class="mx-auto my-auto w-1/3 grid grid-cols-3 grid-rows-3 gap-1">
-      <button @click="jugadorPresionaBoton(index)" v-for="(boton, index) in botones" :key="index" class="w-32 h-32 rounded-2xl p-6 m-2 bg-semi_dark_navy flex justify-center items-center">
-        <img v-if="boton === 1" :src="iconX" alt="X" />
-        <img v-if="boton === 2" :src="iconO" alt="O" />
+  <div class="h-screen flex flex-col justify-center items-center xl:pt-32 md:pt-32">
+    
+    <section class="xl:pl-12 mx-auto my-auto xl:w-1/3 md:w-2/3 px-2 mx-auto grid grid-cols-3 xl:gap-1 md:gap-4">
+      <router-link to="/prin">
+        <button class="xl:w-32 md:w-12 xl:h-20 md:h-12 rounded-2xl xl:p-6 md:p-2 bg-dark_navy hover:bg-semi_dark_navy flex justify-center items-center font-semibold">
+          <img class="ml-0 pl-0 xl:w-12 xl:h-12 md:w-6 md:h-6" src="../assets/logo.svg" alt="no">
+        </button>
+      </router-link>
+      <button class="xl:w-32 md:w-12 xl:h-20 md:h-12 rounded-2xl xl:p-6 md:p-2 m-2 flex justify-center items-center font-bold text-xl text-silver">
+        <span class="text-xl md:text-base">Turno {{ turnoJugador }}</span>
       </button>
-    </div>
-  
-    <section class="mx-auto my-auto w-1/3 grid grid-cols-3 gap-1">
-      <button class="w-32 h-20 rounded-2xl p-6 m-2 bg-light_blue flex justify-center items-center font-semibold">You: {{ VictoriasUsuario }}</button>
-      <button class="w-32 h-20 rounded-2xl p-6 m-2 bg-silver flex justify-center items-center font-semibold">Ties: {{ Empates }}</button>
-      <button class="w-32 h-20 rounded-2xl p-6 m-2 bg-light_yellow flex justify-center items-center font-semibold">CPU: {{ VictoriasCPU }}</button>
+      <button @click="Quiet" class="xl:w-32 md:w-12 xl:h-20 md:h-12 rounded-2xl xl:p-6 md:p-2 xl:m-2 md:p-2 bg-dark_navy hover:bg-silver flex justify-center items-center font-semibold">
+        <img class="xl:w-12 xl:h-12 md:w-6 md:h-6" src="../assets/icon-restart.svg" alt="no">
+      </button>
     </section>
-    <div v-if="ganador" >
-        <div class="fixed top-1/2 left-0 transform -translate-y-1/2  px-8 py-5 text-black text-center text-xl w-full max-w-full mx-auto h-52 bg-gradient-to-b from-g1 to-g2" >
+
+    <div class="mx-auto my-auto xl:w-1/3 md:w-2/3 px-2 mx-auto grid grid-cols-3 xl:gap-1 md:gap-4">
+      <!-- Bucle para generar los botones -->
+      <div v-for="(boton, index) in botones" :key="index" class="col-span-1 flex justify-center items-center">
+        <button @click="jugadorPresionaBoton(index)" class="w-24 h-24 md:w-32 md:h-32 rounded-2xl p-2 m-2 bg-semi_dark_navy flex justify-center items-center">
+          <!-- Contenido del botón (X, O) -->
+          <img class="w-12 h-12 md:w-16 md:h-16" v-if="boton === 1" :src="iconX" alt="X" />
+          <img class="w-12 h-12 md:w-16 md:h-16" v-else-if="boton === 2" :src="iconO" alt="O" />
+        </button>
+      </div>
+   </div>
+
+   <section class="xl:pl-16 mx-auto my-auto xl:w-1/3 md:w-2/3 px-2 mx-auto grid grid-cols-3 xl:gap-1 md:gap-4 xl:items-center md:flex-col md:justify-center md:items-center">
+    <button class="w-24 md:w-24 xl:h-20 md:h-24 rounded-2xl xl:p-6 md:p-4 m-2 bg-light_blue flex justify-center items-center font-semibold">
+     You: {{ VictoriasUsuario }}
+    </button>
+    <button class="w-24 md:w-24 h-20 rounded-2xl xl:p-6 md:p-4 m-2 bg-silver flex justify-center items-center font-semibold">
+    Ties: {{ Empates }}
+    </button>
+    <button class="w-24 md:w-24 xl:h-20 md:h-24  rounded-2xl xl:p-6 md:p-4 m-2 bg-light_yellow flex justify-center items-center font-semibold">
+      CPU: {{ VictoriasCPU }}
+    </button>
+  </section>
+
+  <div v-if="ganador" >
+      <div class="fixed top-1/2 left-0 transform -translate-y-1/2  px-8 py-5 text-black text-center text-xl w-full max-w-full mx-auto h-52 bg-gradient-to-b from-g1 to-g2" >
           <h2 v-if="ganador == 'X'" class="text-light_blue font-bold text-5xl">X Takes the round</h2>
           <h2 v-if="ganador == 'O'" class="text-light_yellow font-bold text-5xl">O Takes the round</h2>
           <h2 v-if ="ganador == 'Empate'" class="text-silver font-bold text-5xl">Round tied</h2>
-          <button @click="Quiet" class="mt-6 mr-4 bg-silver text-black font-medium py-2 px-4 rounded-2xl hover:bg-light_blue_hover transition duration-300">Quiet</button>
-          <button @click="NextRound" class="mt-6 ml-4 bg-light_yellow text-black font-medium py-2 px-4 rounded-2xl text-black hover:bg-light_yellow_hover transition duration-300">Next Round</button>
-        </div>
-    </div>
-    
-  </template>
+          <router-link to="/prin"><button class="mt-6 mr-4 bg-silver text-black font-medium py-2 px-4 rounded-2xl hover:bg-light_blue_hover transition duration-300">Quiet</button></router-link>
+        <button @click="NextRound" class="mt-6 ml-4 bg-light_yellow text-black font-medium py-2 px-4 rounded-2xl text-black hover:bg-light_yellow_hover transition duration-300">Next Round</button>
+      </div>
+  </div>
+  </div>
+</template>
+
+     
+          
+
+
   
   <script setup>
 import { ref, watch } from 'vue';

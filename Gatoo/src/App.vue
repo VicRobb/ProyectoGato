@@ -1,10 +1,9 @@
 <template>
-	<pagina_pricipal  v-if="!showPage"></pagina_pricipal>
-	
-	<router-view v-if="showPage"/>
 
-	<router-link to="/prin" class="mt-5 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-light_yellow ">Menu</router-link>	
 	
+		
+  <router-view/>
+
 </template>
 
 <script setup>
@@ -16,19 +15,6 @@
   import { useRouter } from 'vue-router';
   const router = useRouter();
   const showPage = ref(true);
-
-
-  // Escucha los cambios de ruta y oculta la página principal al redireccionar
-  router.afterEach(() => {
-    showPage.value = false;
-  });
-
-  const menu = () => {
-    showPage.value = true;
-  };
- 
-	
-
 
 
 </script>
