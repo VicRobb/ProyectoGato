@@ -15,12 +15,12 @@
 	import { toRef, ref } from 'vue';
   import { useRouter } from 'vue-router';
   const router = useRouter();
-  const showPage = ref(false);
+  const showPage = ref(true);
 
 
   // Escucha los cambios de ruta y oculta la página principal al redireccionar
   router.afterEach(() => {
-    showPage.value = true;
+    showPage.value = false;
   });
 
   const menu = () => {

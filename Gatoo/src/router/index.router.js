@@ -11,7 +11,7 @@ const router = createRouter({
         
         {
             path: '/prin',
-            name: '/pp',
+            name: 'home',
             component: () => import('../pagina_principal/pagina_principal.vue'),
         },
           
